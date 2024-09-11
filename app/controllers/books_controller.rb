@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class BooksController < ApplicationController 
   def new
   end
   
@@ -20,5 +20,5 @@ class BooksController < ApplicationController
   def edit
   end
   
-  
+end
 end
