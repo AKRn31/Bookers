@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  root "books#index"
+  resources :books
+ 
   get 'books/new'
+  post 'books'=>'books#create'
   get 'books'=> 'books#index'
   get 'books/show'
   get 'books/edit'
