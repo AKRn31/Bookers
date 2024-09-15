@@ -12,7 +12,7 @@
   <% @books.each do |book| %>
   <%= link_to 'Show',book_path(book.id) %>
   <%= link_to 'Edit',edit_book_path(book.id) %>
-  <%= link_to 'Destroy',books_path(book), method: :delete,"date-confirm" =>'Are You Sure?' %>
+  <%= link_to 'Destroy',book_path(book.id), method: :delete,"date-confirm" =>'Are You Sure?' %>
   
   <% end %>
 
