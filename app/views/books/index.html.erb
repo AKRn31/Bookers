@@ -1,25 +1,24 @@
 <h1>Books</h1>
   <% @books.each do |book| %>
-  <p>Title</p>
-  <span><%= book.title %></span>
+    <p>Title</p>
+    <span><%= book.title %></span>
   <% end %>
 
   <% @books.each do |book| %>
-  <p>Body</p>
-  <span><%= book.body %></span>
+    <p>Body</p>
+    <span><%= book.body %></span>
   <% end %>
 
   <% @books.each do |book| %>
-  <%= link_to 'Show',book_path(book.id) %>
-  <%= link_to 'Edit',edit_book_path(book.id) %>
-  <%= link_to 'Destroy',book_path(book.id), method: :delete,"date-confirm" =>'Are You Sure?' %>
-  
+    <%= link_to 'Show',book_path(book.id) %>
+    <%= link_to 'Edit',edit_book_path(book.id) %>
+    <%= link_to 'Destroy',book_path(book.id), method: :delete,"date-confirm" =>'Are You Sure?' %>
   <% end %>
 
 
 <h1>New book</h1>
 <% if @book.errors.any? %>
-  
+ <%= @book.errors.count %>errors prohibited this book from being saved:
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -37,3 +36,4 @@
   <%= f.submit 'Create Book' %>
 
 <% end %>
+
