@@ -1,20 +1,28 @@
 <h1>Books</h1>
-  <% @books.each do |book| %>
-    <p>Title</p>
-    <span><%= book.title %></span>
-  <% end %>
-
-  <% @books.each do |book| %>
-    <p>Body</p>
-    <span><%= book.body %></span>
-  <% end %>
-
+  <table>
+    <tr>
+      <th>
+        <p>Title</p>
+      </th>
+      <th> 
+        <p>Body</p>
+      </th>
+    </tr> 
+    <td><% @books.each do |book| %>
+        <span><%= book.title %></span>
+        <% end %>
+    </td>
+    <td><% @books.each do |book| %>
+        <span><%= book.body %></span>
+        <% end %>
+    </td>
+   
   <% @books.each do |book| %>
     <%= link_to 'Show',book_path(book.id) %>
     <%= link_to 'Edit',edit_book_path(book.id) %>
     <%= link_to 'Destroy',book_path(book.id), method: :delete,"date-confirm" =>'Are You Sure?' %>
   <% end %>
-
+ </table>
 
 <h1>New book</h1>
 <% if @book.errors.any? %>
