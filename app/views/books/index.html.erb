@@ -1,27 +1,29 @@
 <h1>Books</h1>
   <table>
-    <tr>
-      <th>
-        <p>Title</p>
-      </th>
-      <th> 
-        <p>Body</p>
-      </th>
-    </tr> 
-    <td><% @books.each do |book| %>
-        <span><%= book.title %></span>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th> Body</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr>
+        <td><% @books.each do |book| %>
+            <%= book.title %>
+            <% end %>
+        </td>
+        <td><% @books.each do |book| %>
+            <%= book.body %>
+            <% end %>
+        </td>
+  
+        <% @books.each do |book| %>
+        <td><%= link_to 'Show',book_path(book.id) %></td>  
+        <td><%= link_to 'Edit',edit_book_path(book.id) %></td>  
+        <td><%= link_to 'Destroy',book_path(book.id), method: :delete, data: {confirm: 'Are You Sure?'} %></td> 
         <% end %>
-    </td>
-    <td><% @books.each do |book| %>
-        <span><%= book.body %></span>
-        <% end %>
-    </td>
-   
-  <% @books.each do |book| %>
-    <%= link_to 'Show',book_path(book.id) %>
-    <%= link_to 'Edit',edit_book_path(book.id) %>
-    <%= link_to 'Destroy',book_path(book.id), method: :delete,"date-confirm" =>'Are You Sure?' %>
-  <% end %>
+      </tr>
+    </tbody>
  </table>
 
 <h1>New book</h1>
