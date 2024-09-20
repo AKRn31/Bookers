@@ -22,10 +22,35 @@
 
 h1{
   margin:25px 25px 0px;
-  font-size:25px;
 }
 
-.table{
-  display: block;
-  flex-direction: column;
+h3{
+  margin:20px 25px auto;
+}
+
+.notice{
+  margin:25px 60px auto;
+  color:green;
+  text-size:10px;
+}
+
+.message{
+  margin:10px 25px;
+}
+.error{
+  margin:10px auto auto 25px;
+  width:500px;
+  padding:5px 10px;
+  background-color:red;
+  color: white;
+}
+.error-message{
+  margin-left:25px;
+  width:500px;
+  padding:20px 50px;
+  background-color:#dcdcdc;
+  border:solid ;
+  border-color:red;
+  border-width: 3px;
+  border-top:none;
 }
