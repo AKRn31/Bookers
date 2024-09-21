@@ -4,32 +4,21 @@
 <h1>Books</h1>
   <table>
     <thead>
-      <div class="thead">
       <tr>
          <th>Title</th>
          <th> Body</th>
       </tr>
-      </div>
     </thead>
     <tbody>
-      <div class="Books">
-      <tr>
         <% @books.each do |book| %>
+        <tr>
         <td><%= book.title %></td>
-        <% end %>
-
-        <% @books.each do |book| %>
-         <td><%= book.body %></td>
-        <% end %>
-
-
-        <% @books.each do |book| %>
+        <td><%= book.body %></td>
         <td><%= link_to 'Show',book_path(book.id) %></td>
         <td><%= link_to 'Edit',edit_book_path(book.id) %></td>
         <td><%= link_to 'Destroy',book_path(book.id), method: :delete, data: {confirm: 'Are You Sure?'} %></td>
+        </tr>
         <% end %>
-      </tr>
-      </div>
     </tbody>
  </table>
 
